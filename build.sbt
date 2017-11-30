@@ -27,13 +27,17 @@ scalacOptions ++= Seq(
 val flinkVersion = "1.3.2"
 
 resolvers += "Artima Maven Repository" at "http://repo.artima.com/releases"
+resolvers += "Database Group Leipzig University" at "https://wdiserv1.informatik.uni-leipzig.de:443/archiva/repository/dbleipzig/"
 libraryDependencies ++= Seq(
   //  base flink
   "org.apache.flink" %% "flink-scala" % flinkVersion % "provided",
   "org.apache.flink" %% "flink-streaming-scala" % flinkVersion % "provided",
 
   //  typesafe configuration
-  "com.github.pureconfig" %% "pureconfig" % "0.8.0"
+  "com.github.pureconfig" %% "pureconfig" % "0.8.0",
+
+  // graph processing
+  "org.gradoop" % "gradoop-flink" % "0.3.0-SNAPSHOT"
 )
 
 
